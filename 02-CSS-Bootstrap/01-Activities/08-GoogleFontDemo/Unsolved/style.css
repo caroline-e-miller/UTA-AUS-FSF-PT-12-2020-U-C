@@ -1,5 +1,12 @@
 /**
  * Google Fonts Demo
  **/
-
+.thought1, .thought2, .thought3 {
+    font-family: 'Shadows Into Light', cursive;
+}
 /* Add in the Google Fonts of your choice */
+
+h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bolder
+}

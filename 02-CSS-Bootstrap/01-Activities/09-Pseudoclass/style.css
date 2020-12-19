@@ -1,0 +1,13 @@
+button:hover {
+    color: #ff0000;
+}
+
+p {
+      display: none;
+      background-color: red;
+      font-family: 'Times New Roman', Times, serif
+}
+
+div:hover p {
+      display: block;
+}
