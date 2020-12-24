@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        // declare rock, rock, paper, scissors
+
+        var computerOptions = ["Rock", "Paper", "Scissors"];
+        var wins = 0;
+        var losses = 0;
+        var tie = 0;
+        var rounds = 10;
+
+        for (var i = 0; i < rounds; i++) {
+            console.log(i);
+        }
+
+        // prompt user for input - pick rock, paper, or scissors
+
+        var input = prompt("Rock, paper, or scissors?");
+        var confirm = alert("You chose " + input);
+
+        // check if user input is rock, paper, or scissors
+        // if users input is not rock, paper, or scissors send alert telling them bad input
+
+        for (var i = 0; i < computerOptions.length; i++) {
+            if (input !== computerOptions[i]) {
+                alert("That's a stupid answer!")
+            }
+        }
+
+        // computer picks rock, paper, or scissors
+
+        var computerChoice = Math.floor();
+
+        if (computerChoice < 0.3) {
+            alert("Rock")
+        }
+
+        if (computerChoice < 0.6) {
+            alert("Paper")
+        }
+
+        if (computerChoice < 0.9) {
+            alert("Scissors")
+        }
+
+    // if user plays rock over computer playing scissors, the win, alert them that they win
+
+    // ex
+
+    // if user loses alert them that they lost
+
+    </script>
+</body>
+
+</html>
