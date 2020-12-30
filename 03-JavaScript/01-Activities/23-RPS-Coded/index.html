@@ -12,51 +12,75 @@
 
         // declare rock, rock, paper, scissors
 
-        var computerOptions = ["Rock", "Paper", "Scissors"];
+        var computerOptions = ["rock", "paper", "scissors"];
         var wins = 0;
         var losses = 0;
         var tie = 0;
         var rounds = 10;
 
+        // log the number of rounds
         for (var i = 0; i < rounds; i++) {
             console.log(i);
-        }
 
-        // prompt user for input - pick rock, paper, or scissors
+            // generate random computer choice
+            var computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+            console.log(computerChoice);
 
-        var input = prompt("Rock, paper, or scissors?");
-        var confirm = alert("You chose " + input);
+            // user inputs guess, confirmation follows
+            var input = prompt("Rock, paper, or scissors?");
+            input = input.toLowerCase();
 
-        // check if user input is rock, paper, or scissors
-        // if users input is not rock, paper, or scissors send alert telling them bad input
+            var confirm = alert("You chose " + input);
 
-        for (var i = 0; i < computerOptions.length; i++) {
-            if (input !== computerOptions[i]) {
-                alert("That's a stupid answer!")
+            // if user inputs valid answer, confirm and display computer counter
+            if (input === "rock" || input === "scissors" || input === "paper") {
+                alert("Good choice!")
+            } else {
+                alert("You're stupid!")
+            }
+
+            alert("Computer chose " + computerChoice);
+
+            // tie notification
+            if (input === computerChoice) {
+                tie++;
+                alert("It's a tie!")
+            }
+
+            // lose notification
+            if (input === "scissors" && computerChoice === "rock") {
+                losses++;
+                alert("You've lost " + losses + " times!");
+            }
+            if (input === "paper" && computerChoice === "scissors") {
+                losses++;
+                alert("You've lost " + losses + " times!");
+            }
+            if (input === "rock" && computerChoice === "paper") {
+                losses++;
+                alert("You've lost " + losses + " times!");
+            }
+
+            // win notification
+            if (input === "scissors" && computerChoice === "paper") {
+                wins++;
+                alert("You've won " + wins + " times!");
+            }
+            if (input === "paper" && computerChoice === "rock") {
+                wins++;
+                alert("You've won " + wins + " times!");
+            }
+            if (input === "rock" && computerChoice === "scissors") {
+                wins++;
+                alert("You've won " + wins + " times!");
             }
         }
-
-        // computer picks rock, paper, or scissors
-
-        var computerChoice = Math.floor();
-
-        if (computerChoice < 0.3) {
-            alert("Rock")
+        // final count
+        if (wins > losses) {
+            alert("You've won!");
+        } else {
+            alert("You've lost!");
         }
-
-        if (computerChoice < 0.6) {
-            alert("Paper")
-        }
-
-        if (computerChoice < 0.9) {
-            alert("Scissors")
-        }
-
-    // if user plays rock over computer playing scissors, the win, alert them that they win
-
-    // ex
-
-    // if user loses alert them that they lost
 
     </script>
 </body>
