@@ -1,67 +1,108 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>My First Object</title>
-  </head>
-  <body>
 
-    <script>
+<head>
+  <meta charset="UTF-8">
+  <title>My First Object</title>
+</head>
 
-      var car = {
-        make: "Honda",
-        model: "Fit",
-        color: "Blue Raspberry",
-        mileage: 3000,
-        isWorking: true,
+<body>
 
-        driveToWork: function() {
+  <script>
 
-          alert("Old Mileage: " + this.mileage);
+    var car = {
+      make: "Honda",
+      model: "Fit",
+      color: "Blue Raspberry",
+      mileage: 3000,
+      isWorking: true,
 
-          this.mileage = this.mileage + 8;
+      driveToWork: function () {
 
-          alert("New mileage: " + this.mileage);
-        },
+        alert("Old Mileage: " + this.mileage);
 
-        driveAroundWorld: function() {
+        this.mileage = this.mileage + 8;
 
-          alert("Old Mileage: " + this.mileage);
+        alert("New mileage: " + this.mileage);
+      },
+      // driveToWork gives a dropdown alert that displays the milage, changes the milage property to add 8, then shows a new alert with the updated mileage
 
-          this.mileage = this.mileage + 24000;
+      driveAroundWorld: function () {
 
-          alert("New Mileage: " + this.mileage);
-          alert("Car needs a tuneup!");
+        alert("Old Mileage: " + this.mileage);
 
-          this.isWorking = false;
-        },
+        this.mileage = this.mileage + 24000;
 
-        getTuneUp: function() {
-          alert("Car is ready to go!");
-          this.isWorking = true;
-        },
+        alert("New Mileage: " + this.mileage);
+        alert("Car needs a tuneup!");
 
-        honk: function() {
-          alert("Honk! Honk!");
-        }
-      };
+        this.isWorking = false;
+      },
+      // driveAroundWorld shows an alert that displays the old milage based on the current milage value. Then, it adds 24000 to the value and shows a new alert with the updated milage value. A third alert runs last, showing that the car needs a tuneup.
+
+      getTuneUp: function () {
+        alert("Car is ready to go!");
+        this.isWorking = true;
+      },
+      // getTuneUp shows an alert that the car is ready to go if the isWorking property has a true value.
+
+      honk: function () {
+        alert("Honk! Honk!");
+      }
+    };
+    // honk shows an alert that honks.
 
 
-      // How would we log...
+    // How would we log...
 
-      // The car's make?
+    // The car's make?
+    console.log(car.make);
+    // The car's model?
+    console.log(car.model);
+    // The car's mileage?
+    console.log(car.mileage);
+    // How would we run the car's driveToWork method?
+    car.driveToWork();
+    // How would we run the car's driveAroundWorld method?
+    car.driveAroundWorld();
+    // How would we run the getTuneUp method?
+    car.getTuneUp();
 
-      // The car's model?
+    var josuke = {
+      "real name": "Josuke Higashikata",
+      "age (est)": 16,
+      "nationality": "Japanese",
+      "hasGoodHair": false,
+      "ultimateAmbition": "killing Kira!",
+      "kiraLikes": "hands...",
+      "powers": [
+        "repairing,",
+        "punching really hard!"
+      ],
+      "favoriteSong": {
+        "name": "'I Want You'",
+        "artist": "Savage Garden."
+      }
+    };
 
-      // The car's mileage?
+    var hairOpinion = confirm("I'm Josuke. Do you like my hair?")
+    if (hairOpinion) {
+      alert("Thanks for saying the right thing!");
+    } else {
+      alert("... what did you say about my hair?");
+    }
 
-      // How would we run the car's driveToWork method?
+    alert("My favorite song is " + josuke.favoriteSong.name + " by " + josuke.favoriteSong.artist);
+    alert("My powers are " + josuke.powers[0] + " and " + josuke.powers[1]);
+    alert("My ultimate ambition is " + josuke.ultimateAmbition)
+    alert("Kira's favorite thing is " + josuke.kiraLikes);
 
-      // How would we run the car's driveAroundWorld method?
+    var yourAmbition = prompt("Anyway, that's what I want to do. What's your ultimate ambition?");
+    var response = alert("So your ambition is " + yourAmbition + "?");
+    alert("Interesting. Mine is better, though.");
 
-      // How would we run the getTuneUp method?
+  </script>
 
-    </script>
-    
-  </body>
+</body>
+
 </html>
