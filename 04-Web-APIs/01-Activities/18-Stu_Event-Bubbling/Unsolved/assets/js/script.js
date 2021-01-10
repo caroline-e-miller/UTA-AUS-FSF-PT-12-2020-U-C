@@ -17,9 +17,9 @@ carousel.style.backgroundImage = "url('https://picsum.photos/300/200')";
 
 function navigate(direction) {
   index = index + direction;
-  if (index < 0) { 
-    index = images.length - 1; 
-  } else if (index > images.length - 1) { 
+  if (index < 0) {
+    index = images.length - 1;
+  } else if (index > images.length - 1) {
     index = 0;
   }
   currentImage = images[index];
@@ -27,12 +27,12 @@ function navigate(direction) {
 }
 
 // TODO: Describe the functionality of the following event listener.
-carousel.addEventListener("click", function() {
+carousel.addEventListener("click", function () {
   window.location.href = images[index];
 });
 
 // TODO: Describe the functionality of the following event listener.
-next.addEventListener("click", function(event) {
+next.addEventListener("click", function (event) {
   // TODO: What is the purpose of the following line of code?
   event.stopPropagation();
 
@@ -40,8 +40,8 @@ next.addEventListener("click", function(event) {
 });
 
 // TODO: Describe the functionality of the following event listener.
-prev.addEventListener("click", function(event) {
-    // TODO: What would happen if we didn't add the following line of code?
+prev.addEventListener("click", function (event) {
+  // TODO: What would happen if we didn't add the following line of code?
   event.stopPropagation();
 
   navigate(-1);

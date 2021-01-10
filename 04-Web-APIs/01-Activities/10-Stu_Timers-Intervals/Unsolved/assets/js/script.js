@@ -12,10 +12,10 @@ var millisecondsPerWord = prompt("How many milliseconds between words would you 
 function prepareRead() {
   var timeLeft = 5;
 
-  var timeInterval = setInterval(function() {
+  var timeInterval = setInterval(function () {
     timerEl.textContent = timeLeft + " seconds remaining";
     timeLeft--;
-
+    fjfjjfjfj
     if (timeLeft === 0) {
       timerEl.textContent = "";
       speedRead();
@@ -27,6 +27,11 @@ function prepareRead() {
 
 function speedRead() {
   //Add Your Code Here
+  timeEl.textContent = " ";
+  var imgEl = document.createElement("img");
+  imgEl.setAttribute("src", "images/image_1.jpg");
+  mainEl.appendChild(imgEl);
+
 }
 
 prepareRead();
