@@ -2,6 +2,7 @@ var poem = "Some say the world will end in 🔥, Some say in ice. From what I’
 var words = poem.split(" ");
 
 var mainEl = document.getElementById("main");
+var readEl = document.getElementById("read");
 var timerEl = document.getElementById("countdown");
 var bodyEl = document.createElement("div");
 
@@ -15,7 +16,7 @@ function prepareRead() {
   var timeInterval = setInterval(function () {
     timerEl.textContent = timeLeft + " seconds remaining";
     timeLeft--;
-    fjfjjfjfj
+
     if (timeLeft === 0) {
       timerEl.textContent = "";
       speedRead();
