@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>Lottery Generator</title>
@@ -11,7 +10,6 @@
   <!-- Added a link to Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
-
 <body>
 
   <div class="jumbotron">
@@ -21,9 +19,7 @@
     <div class="text-center">
 
       <!-- Here we have our button with id random-button -->
-      <button id="random-button" class="btn btn-primary btn-lg">
-        <h1>?</h1>
-      </button>
+      <button id="random-button" class="btn btn-primary btn-lg"><h1>?</h1></button>
 
     </div>
 
@@ -33,6 +29,7 @@
   <h1 class="text-center" id="random-number"></h1>
 
   <script type="text/javascript">
+<<<<<<< HEAD:05-Third-Party-APIs/01-Activities/08-LotteryGenerator/lottery-generator.html
 
     $(document).ready(function () {
 
@@ -49,12 +46,36 @@
 
         var finalNumber = lottery.join('')
         $("#random-button").prepend("<br><hr>" + lottery);
+=======
+
+    $(document).ready(function() {
+
+      $("#random-button").on("click", function() {
+
+        // Create a string which will hold the lottery number
+        var lottoNumber = "";
+
+        // Then initiate a loop to generate 9 separate numbers
+        for (var i = 0; i < 9; i++) {
+
+          // For each iteration, generate a new random number between 0 and 9.
+          var random = Math.floor(Math.random() * 10);
+
+          // Take this number and then add it to the rest of the string.
+          // In essence, we are iteratively building a string of numbers. (e.g. First: 1, Second: 13, Third: 135, etc.)
+          lottoNumber = random + lottoNumber;
+
+        }
+
+        // ... and then dump the random number into our random-number div.
+        $("#random-number").prepend("<br><hr>" + lottoNumber);
+>>>>>>> 0f4fef510c7fc3771e5add458fbc0129fe03bb25:05-Third-Party-APIs/01-Activities/08-LotteryGenerator/Solved/lottery-generator-solved.html
 
       });
 
     });
+
   </script>
 
 </body>
-
 </html>
