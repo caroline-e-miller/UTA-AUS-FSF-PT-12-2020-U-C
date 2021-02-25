@@ -24,27 +24,27 @@ console.log(j); // prints 42
 
 // 2. When using while loops, any values we create inside exist outside of the while-loop block
 
-// var count = 0;
+var count = 0;
 
-// while (count < 5) {
-//   var tripled = count * 3;
-//   count++;
-// }
+while (count < 5) {
+  var tripled = count * 3;
+  count++;
+}
 
-// console.log(tripled); // Prints 12
+console.log(tripled); // Prints 12
 
 // ==========================================================================
 
 // 3. When using let, values defined inside of the while-loop block don't exist outside of it
 
-// let c = 0;
+let c = 0;
 
-// while (c < 5) {
-//   let quadrupled = c * 3;
-//   c++;
-// }
+while (c < 5) {
+  let quadrupled = c * 3;
+  c++;
+}
 
-// console.log(quadrupled); // ReferenceError: quadrupled is not defined
+console.log(quadrupled); // ReferenceError: quadrupled is not defined
 
 // ==========================================================================
 
