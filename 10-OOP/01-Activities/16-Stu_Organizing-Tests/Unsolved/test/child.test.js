@@ -2,6 +2,7 @@ const Child = require("../child");
 
 describe("Child", () => {
   // TODO: Add a comment describing the purpose of the following test suite
+  // to check that the childs name and age are a string and a number, respectively
   describe("Initialization", () => {
     it("should create an object with a name and age if provided valid arguments", () => {
       const child = new Child("Sarah", 3);
@@ -23,6 +24,7 @@ describe("Child", () => {
       const cb = () => new Child("Sarah");
 
       // TODO: Add a comment describing the purpose of the following declaration
+      // define the error message to be thrown
       const err = new Error("Expected parameter 'age' to be a non-negative number");
 
       // TODO: Add a comment describing the purpose of the following statement

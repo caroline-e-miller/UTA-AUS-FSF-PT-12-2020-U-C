@@ -43,3 +43,15 @@ function Student(first, last, age) {
 const John = new Student('John', 'Appleseed', '30');
 console.log('John.displayGrade():', John.displayGrade(95));
 console.log('John.displayGrade():', John.displayGrade('B'));
+
+// syntax practice
+const getNegative = (numAsString) => {
+  const negNum = numAsString * -1;
+
+  if (isNaN(negNum)) throw new Error('not an number!');
+  return negNum;
+}
+
+console.log('2');
+console.log('4');
+console.log('bat')
