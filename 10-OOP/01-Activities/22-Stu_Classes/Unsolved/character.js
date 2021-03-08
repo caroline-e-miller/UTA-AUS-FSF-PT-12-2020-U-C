@@ -1,11 +1,30 @@
 class Character {
   // TODO: Add a constructor
+  constructor(name, strength, hitPoints) {
+    this.name = name;
+    this.strength = strength;
+    this.hitPoints = hitPoints;
+  }
   // TODO: Create a printStats() method that console logs `this.name`, `this.strength`, and `this.hitPoints`
-
+  printStats() {
+    console.log(`Stats for ${this.name} are:\n`)
+    console.log(`Stats for ${this.strength} are:\n`)
+    console.log(`Stats for ${this.hitPoints} are:\n`)
+  }
   // TODO: Create a isAlive() method that returns a boolean based on whether or not a character's "hitpoints" are <= 0
-
+  isAlive() {
+    if (this.hitPoints <= 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
   // TODO: Create a attack() method that accepts an opponent object and decreases the opponent's "hitPoints" by this character's strength
+  attack(character2) {
+    character2.hitPoints -= this.strength;
+  }
 }
+
 
 // Creates two unique characters using the "character" constructor
 const grace = new Character('Grace', 30, 75);
