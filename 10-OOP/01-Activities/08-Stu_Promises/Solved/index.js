@@ -26,3 +26,4 @@ const practiceCoding = () =>
 practiceCoding()
   .then(() => console.log('We are coding in promises!'))
   .catch((err) => console.error('Promise rejected:', err));
+
