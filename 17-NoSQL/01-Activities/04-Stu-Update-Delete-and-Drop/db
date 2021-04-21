@@ -1,0 +1,4 @@
+db.basket.insert({
+    "name": "Caroline",
+    "OS": "Mac"
+})

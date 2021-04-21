@@ -1,0 +1,6 @@
+db.people.insert({
+    "name": "Josuke Hishigakata",
+    "age": "17",
+    "fathers": ["who knows?"],
+    "part": "4"
+})

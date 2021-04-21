@@ -1,0 +1,5 @@
+db.animals.insert({
+    "name": "snake",
+    "weight": "3",
+    "legs": "0"
+})
