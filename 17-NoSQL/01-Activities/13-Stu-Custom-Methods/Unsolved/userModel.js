@@ -28,7 +28,7 @@ const UserSchema = new Schema({
     trim: true,
     required: "Password is Required",
     validate: [
-      ({length}) => length >= 6,
+      ({ length }) => length >= 6,
       "Password should be longer."
     ]
   },
@@ -50,8 +50,16 @@ const UserSchema = new Schema({
 });
 
 // setFullName: sets the current user's `fullName` property to their lastName appended to their `firstName`
+UserSchema.methods.setFullName = function () {
+  this.username = `${this.firstName} ${this.lastName}`;
+  return this.username;
+};
 
 // lastUpdatedDate: sets the current user's `lastUpdated` property to Date.now()
+UserSchema.methods.setLastUpdatedDate = function () {
+  this.lastUpdated = Date.now;
+  return this.lastUpdated;
+}
 
 // This creates our model from the above schema, using mongoose's model method
 const User = mongoose.model("User", UserSchema);

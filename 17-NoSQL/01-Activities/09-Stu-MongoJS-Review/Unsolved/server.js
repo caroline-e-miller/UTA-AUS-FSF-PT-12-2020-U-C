@@ -33,27 +33,87 @@ db.on("error", error => {
 app.post("/submit", ({ body }, res) => {
   // Save the request body as an object called book
   const book = body;
+  book.read = false;
+
+  db.warmup.insert(book, (error, found) => {
+    if (error) {
+      res.send(error);
+    } else {
+      res.send(found);
+    }
+  });
 
   // If we want the object to have a boolean value of false,
   // we have to do it here, because the ajax post will convert it
   // to a string instead of a boolean
-  book.read = false;
 });
 
 // Find all books marked as read
-app.get("/read", (req, res) => {});
+app.get("/read", (req, res) => {
+  db.warmup.find({ read: true }, (error, found) => {
+    if (error) {
+      res.send(error);
+    } else {
+      res.json(found);
+    }
+  })
+});
 
 // Find all books marked as unread
-app.get("/unread", (req, res) => {});
+app.get("/unread", (req, res) => {
+  db.warmup.find({ read: false }, (error, found) => {
+    if (error) {
+      res.send(error);
+    } else {
+      res.json(found);
+    }
+  })
+});
 
 // Mark a book as having been read
 app.put("/markread/:id", (req, res) => {
+  db.notes.findOne(
+    {
+      _id: mongojs.ObjectId(req.params.id)
+    },
+    {
+      $set: {
+        read: true,
+      }
+    },
+
+    (error, edited) => {
+      if (error) {
+        res.send(error);
+      } else {
+        res.send(edited);
+      }
+    }
+  );
   // Remember: when searching by an id, the id needs to be passed in
   // as (mongojs.ObjectId(IdYouWantToFind))
 });
 
 // Mark a book as having been not read
 app.put("/markunread/:id", (req, res) => {
+  db.notes.findOne(
+    {
+      _id: mongojs.ObjectId(req.params.id)
+    },
+    {
+      $set: {
+        read: false,
+      }
+    },
+
+    (error, edited) => {
+      if (error) {
+        res.send(error);
+      } else {
+        res.send(edited);
+      }
+    }
+  );
   // Remember: when searching by an id, the id needs to be passed in
   // as (mongojs.ObjectId(IdYouWantToFind))
 });
