@@ -1,6 +1,6 @@
-# Deploy with Heroku and MongoDB Atlas
+# Deploy with  and MongoDB Atlas
 
-This guide walks you through the steps required to deploy your application to Heroku with a MongoDB database using MongoDB Atlas.
+This guide walks you through the steps required to deploy your application to  with a MongoDB database using MongoDB Atlas.
 
 If you don't yet have a MongoDB Atlas account, please see [Set Up MongoDB Atlas](./MongoAtlas-Setup.md) before you proceed.
 
@@ -28,33 +28,33 @@ First, you'll create a database for your application.
 
 Great! Your database has been created. Let's move on to connect it to your application in production.
 
-## Connect the Database to Heroku
+## Connect the Database to 
 
-In order for your Heroku application to use the MongoDB Atlas database, you'll need to do two things:
+In order for your  application to use the MongoDB Atlas database, you'll need to do two things:
 
-1. Set up an environment variable in your Heroku application to hold the database's connection string.
+1. Set up an environment variable in your  application to hold the database's connection string.
 
-2. Make sure your application's code is set up to look for that Heroku environment variable and, if it's not found, connect to a local database instead. This is important because that environment variable will only exist in production with Heroku.
+2. Make sure your application's code is set up to look for that  environment variable and, if it's not found, connect to a local database instead. This is important because that environment variable will only exist in production with .
 
-### Set Up the Environment Variable in Heroku
+### Set Up the Environment Variable in 
 
-First, you'll add the database's connection string to an environment variable in Heroku.
+First, you'll add the database's connection string to an environment variable in .
 
-1. To get started, make sure you've created a Heroku app for your project. To create the app, navigate to your application's directory from the command line and type the following command:
+1. To get started, make sure you've created a  app for your project. To create the app, navigate to your application's directory from the command line and type the following command:
 
    ```bash
-   heroku create
+    create
    ```
 
-2. Once you receive confirmation that Heroku successfully created the name space for your application, navigate to that application in your Heroku account through the browser. To do that, go to the [Heroku website](https://heroku.com), log in, and select the application from the list of applications in your account dashboard.
+2. Once you receive confirmation that  successfully created the name space for your application, navigate to that application in your  account through the browser. To do that, go to the [ website](https://.com), log in, and select the application from the list of applications in your account dashboard.
 
-3. From your Heroku application, navigate to the Settings tab on the right side of the application's menu. The page should look like the following image:
+3. From your  application, navigate to the Settings tab on the right side of the application's menu. The page should look like the following image:
 
-   ![The Heroku application's setting tab shows configuration options for our app.](./assets/images-deploy/500-heroku-settings.png)
+   ![The  application's setting tab shows configuration options for our app.](./assets/images-deploy/500--settings.png)
 
 4. On this page, you'll see a section called "Config Vars" with a form to enter key/value pairs. This will be where we add our product database's information. For now, type `MONGODB_URI` in the KEY field. For the VALUE, we'll fetch the database connection string from MongoDB Atlas in the next step.
 
-5. Open your MongoDB Atlas dashboard in another browser tab so you don't leave the Heroku page. Once there, locate the Connect button in your cluster's information and click it. If you're having trouble finding it, refer to the following image:
+5. Open your MongoDB Atlas dashboard in another browser tab so you don't leave the  page. Once there, locate the Connect button in your cluster's information and click it. If you're having trouble finding it, refer to the following image:
 
    ![The MongoDB Atlas dashboard shows our cluster with a connect button in it.](./assets/images-deploy/600-overview-connect.png)
 
@@ -68,7 +68,7 @@ First, you'll add the database's connection string to an environment variable in
 
 8. Here, all you need to do is copy the connection string listed in the second step. So go ahead and click the Copy button.
 
-9. With the connection string copied, navigate back to your Heroku application settings and paste it into the Value form field.
+9. With the connection string copied, navigate back to your  application settings and paste it into the Value form field.
 
 10. We need to update the connection string to include our database name, username, and password. The username and password are not your Mongo Atlas account credentials, but rather the ones you used as a database user/administrator. Right now it probably looks like the following code:
 
@@ -84,7 +84,7 @@ First, you'll add the database's connection string to an environment variable in
 
 12. Once your connection string contains the correct information, click the Add button save it. The resulting screen should look something like the following image:
 
-    ![The Heroku application's settings now include the Mongo database's connection string as an environment variable.](./assets/images-deploy/900-heroku-configvars.png)
+    ![The  application's settings now include the Mongo database's connection string as an environment variable.](./assets/images-deploy/900--configvars.png)
 
 Great! Now that you have this all set up, the last thing you need to do is update your application code.
 
@@ -106,17 +106,17 @@ Next and last, you'll update the application's code to accommodate the MongoDB c
    );
    ```
 
-2. With this code in place, the `mongoose.connect()` command will attempt to use the environment variable first. If it's running on Heroku, it will find that variable and use it. If it's running locally on your machine, it won't find that variable and will fall back to use your local database connection instead.
+2. With this code in place, the `mongoose.connect()` command will attempt to use the environment variable first. If it's running on , it will find that variable and use it. If it's running locally on your machine, it won't find that variable and will fall back to use your local database connection instead.
 
-3. Save your code and use the following Git commands to add, commit, and push it to Heroku:
+3. Save your code and use the following Git commands to add, commit, and push it to :
 
    ```bash
    git add -A
    git commit -m 'deploying'
    # make sure you're pushing from your local main branch!
-   git push heroku main
+   git push  main
    ```
 
-4. If everything worked correctly, use `heroku open` to open your app in the browser and see your work! If something isn't working, run `heroku logs` from the command line to see where there may be issues.
+4. If everything worked correctly, use ` open` to open your app in the browser and see your work! If something isn't working, run ` logs` from the command line to see where there may be issues.
 
 Happy coding!
